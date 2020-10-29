@@ -1,0 +1,21 @@
+@import "./var";
+i.social__icon{
+	font-size: 34px;
+	color: white;
+}
+footer{
+	background-color: $secondBg;
+	padding: 24px;
+}
+.container{
+	padding: 0 24px;
+}
+.social{
+	max-width: 60%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	& > a:not(:last-child) {
+		margin-right: 24px;
+	}
+}
