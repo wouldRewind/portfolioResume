@@ -1,0 +1,24 @@
+{
+  "name": "portfolioresume",
+  "version": "1.0.0",
+  "description": "моё резюме",
+  "main": "index.js",
+  "scripts": {
+	 "test": "echo \"Error: no test specified\" && exit 1",
+	 "tsc:w": "tsc-w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wouldRewind/portfolioResume.git"
+  },
+  "author": "Suhanov Nick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wouldRewind/portfolioResume/issues"
+  },
+  "homepage": "https://github.com/wouldRewind/portfolioResume#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^4.0.5"
+  }
+}
