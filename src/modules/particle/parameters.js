@@ -24,8 +24,8 @@ class Particle {
 	}
 	position()
 	{
-		if(this.x > w || this.x < 0) this.velocityX*=-1;
-		if(this.y > h || this.y < 0) this.velocityY*=-1;
+		if(this.x >= w || this.x <= 0) this.velocityX*=-1;
+		if(this.y >= h || this.y <= 0) this.velocityY*=-1;
 
 		this.x+=this.velocityX;
 		this.y+=this.velocityY;
