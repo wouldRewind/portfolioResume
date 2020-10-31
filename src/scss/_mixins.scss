@@ -1,0 +1,4 @@
+@mixin boxShadow($blur,$color)
+{
+	box-shadow: 0 0 $blur $color;
+}

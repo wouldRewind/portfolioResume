@@ -1,17 +1,18 @@
+@import "./var";
 .main{
 	overflow: auto;
 	&__avatar{
 		width: 15.625rem;
 		border-radius: 50%;
 		float: left;
-		margin-right: 24px;
+		margin-right: $mainOffset;
 		object-fit: cover;
 	}
 	&__descr{
 		width: 70%;
 	}
 }
-@media screen and(max-width: 39.5rem){
+@media screen and(max-width: $mobile_break_point){
 	.main{
 		display: flex;
 		flex-direction: column;
@@ -22,7 +23,7 @@
 			float: none;
 			width: 12.5rem;
 			height: 12.5rem;
-			margin-bottom: 24px;
+			margin-bottom: $mainOffset;
 		}
 		&__descr{
 			text-align: center;

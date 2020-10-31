@@ -13,6 +13,6 @@ footer{
 	display: flex;
 	justify-content: center;
 	& > a:not(:last-child) {
-		margin-right: 24px;
+		margin-right: $mainOffset;
 	}
 }
