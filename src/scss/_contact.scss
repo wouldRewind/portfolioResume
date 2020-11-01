@@ -1,0 +1,42 @@
+@import "./mixins";
+@import "./var";
+.contact{
+	transition: $transitionDuration;
+	color: #fff;
+	width: 60%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	& > button,input,textarea {
+		padding: $mainOffset;
+		background: transparent;
+		border: 1px solid #fff;
+		transition: inherit;
+		color: inherit;
+		&:not(:last-child)
+		{
+			margin-bottom: $mainOffset;
+			&:focus{@include boxShadow(20px,#FF1495)}
+			&:placeholder{color: #fff;}
+		}
+	}
+	&__area{
+		resize: none;
+		overflow-y: hidden;
+	}
+	& button[type=submit]
+	{
+		cursor: pointer;
+		width: 150px;
+		margin: 0 auto;
+		&:hover{
+			@include boxShadow(15px,#FF1495);
+		}
+	}
+}
+@media screen and(max-width: $mobile_break_point)
+{
+	.contact{
+		width: inherit;
+	}
+}

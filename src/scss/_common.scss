@@ -22,11 +22,11 @@ section{
 	}
 	&:nth-child(odd)
 	{
-		background: $secondBg;
+		background: $firstBg;
 	}
 	&:nth-child(even)
 	{
-		background: $firstBg;
+		background: $secondBg;
 	}
 }
 .container{
