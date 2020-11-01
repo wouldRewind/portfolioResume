@@ -4,13 +4,13 @@ w = canvas.width = innerWidth,
 h = canvas.height = innerHeight;
 
 
-const cvsContainer = document.querySelector("body");
+const cvsContainer = document.querySelector(".no-pad");
 cvsContainer.appendChild(canvas);
 
-cvsContainer.onresize = function()
-{
-	w = canvas.width = cvsContainer.offsetWidth;
-	h = canvas.height = cvsContainer.offsetHeight;
-}
+// cvsContainer.onresize = function()
+// {
+// 	w = canvas.width = cvsContainer.offsetWidth;
+// 	h = canvas.height = cvsContainer.offsetHeight;
+// }
 
 export {canvas,ctx,w,h};

@@ -16,3 +16,12 @@ footer{
 		margin-right: $mainOffset;
 	}
 }
+i{
+	transition: $transitionDuration;
+}
+i.vk:hover{
+	color: #4D75A3;
+}
+i.github:hover{
+	color: black;
+}

@@ -2,9 +2,9 @@ import {w,h,ctx} from "./canvas.js";
 const particles = [];
 
 const particleProps = {
-	bgColor: "#1F1F20",
+	bgColor: "#252527",
 	color: "#F1D5D7",
-	count: 60,
+	count: innerWidth > 1000 ? 60 : innerWidth > 600 ? 40 : 25,
 	maxVelocity: 1,
 	lineLength: 150,
 	maxRadius: 5,
