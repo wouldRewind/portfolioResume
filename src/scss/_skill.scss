@@ -2,7 +2,7 @@
 .skill{
 	display: grid;
 	grid-gap: 40px;
-	grid-template-columns: repeat(6,1fr);
+	grid-template-columns: repeat(4,1fr);
 	cursor: pointer;
 	&__title{
 		margin-bottom: $mainOffset;
@@ -15,6 +15,9 @@
 		& img{
 			width: 100%;
 			margin: auto auto;
+			&.js{
+				border-radius: 50%;
+			}
 		}
 	}
 }
