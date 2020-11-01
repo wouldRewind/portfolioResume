@@ -1,0 +1,103 @@
+@import "./var";
+.accent{
+	display: inline-block;
+	position: relative;
+	z-index: 1;
+	&::before{
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 25%;
+		left: 0;
+		bottom: .625rem;
+		z-index: -1;
+		background: $decorColor;
+	}
+}
+.intro{
+	display: flex;
+	align-items: center;
+	// padding: 0 $mainOffset;
+	z-index: 1;
+	height: inherit;
+	&-img{
+		margin-left: 3rem;
+		flex-basis: 40%;
+		&__holder{
+			position: relative;
+			&::after{
+				content: "";
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				z-index: 0;
+				top: .275rem;
+				left: .275rem;
+				border: 7px solid $decorColor;
+			}
+			& img{
+				width: 100%;
+				height: 100%;	
+				object-fit: cover;
+				background-color: #252527; // подложка
+				position: relative;
+				border: none;
+				z-index: 1;
+			}
+		}
+	}
+	&-main{
+		&__greetings{font-size: 16px;}
+		&__title{
+			font-size: 50px;
+			margin: 0.625rem 0;
+			font-weight: 700;
+		}
+		&__subtitle{
+			font-size: 1.8rem;
+			font-weight: 300;
+		}
+	}
+}
+@media screen and(max-width: $tablet_break_point)
+{
+	.intro{
+		padding-top: $mainOffset * 3;
+		text-align: center;
+		flex-direction: column;
+		&-main{
+			&__subtitle{
+				text-align: center;
+			}
+		}
+		&-img{
+			margin-top: $mainOffset * 2;
+			margin-left: 0;
+		}
+	}
+}
+@media screen and(max-width: $mobile_break_point)
+{
+	.accent{
+		display: block;
+	}
+	.overflow{
+		text-align: left;
+	}
+	.intro{
+		text-align: center;
+		flex-direction: column;
+		&-img{
+			margin-left: 0;
+		}
+		&-main{
+			&__title{
+				font-size: 32px;
+			}
+			&__subtitle{
+				font-size: 16px;
+			}
+
+		}
+	}
+}
