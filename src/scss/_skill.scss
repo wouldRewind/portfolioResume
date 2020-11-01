@@ -3,6 +3,7 @@
 	display: grid;
 	text-align: center;
 	grid-template-columns: repeat(4,1fr);
+	grid-gap: 40px;
 	&__title{
 		margin-bottom: $mainOffset;
 	}
