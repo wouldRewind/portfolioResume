@@ -20,12 +20,14 @@
 	}
 	display: flex;
 	align-items: center;
+	justify-content: space-around;
 	// padding: 0 $mainOffset;
 	z-index: 1;
 	height: inherit;
 	&-img{
-		margin-left: 3rem;
+		// margin-left: 3rem;
 		flex-basis: 40%;
+		max-width: 400px;
 		&__holder{
 			position: relative;
 			&::after{

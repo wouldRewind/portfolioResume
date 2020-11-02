@@ -1,4 +1,11 @@
 import {particleInit} from "./src/js/particle.js";
-particleInit();
+
+
+// перед тем, как загрузятся стили
+document.addEventListener("DOMContentLoaded",function()
+{
+	particleInit();
+})
+
 
 

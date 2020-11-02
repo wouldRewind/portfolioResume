@@ -1,0 +1,40 @@
+@import "./var";
+.github{
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+	grid-gap: 30px;
+	&-repo{
+		padding: $mainOffset;
+		border: 1px solid grey;
+		border-radius: 3px;
+		&__link{
+			color: #f5f5f5;
+			display: block;
+			font-weight: 300;
+			font-size: 2rem;
+		}
+		&__language{
+			margin: 14px 0;
+		}
+		&__desc{
+			margin: 14px 0;
+			font-weight: 300;
+			font-size: 14px;
+		}
+		&__marker{
+			display: inline-block;
+			width: 12px;
+			height: 12px;
+			vertical-align: text-top;
+			margin-right: 7px;
+			border-radius: 50%;
+			background: #fff;
+		}
+	}
+}
+@media screen and(max-width: $mobile_break_point)
+{
+	.github{
+		grid-template-columns: 1fr;
+	}
+}

@@ -4,7 +4,7 @@ const particles = [];
 const particleProps = {
 	bgColor: "#1F1F20",
 	color: "#F1D5D7",
-	count: innerWidth > 1000 ? 60 : innerWidth > 600 ? 40 : 25,
+	count: innerWidth > 1000 ? 40 : innerWidth > 600 ? 20 : 15,
 	maxVelocity: 1,
 	lineLength: 150,
 	maxRadius: 5,
