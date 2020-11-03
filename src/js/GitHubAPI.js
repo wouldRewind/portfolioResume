@@ -1,5 +1,11 @@
+import {languageOptions,GitHubRepos} from "../modules/github/displayRepos.js";
+
 const userUrl = "https://api.github.com/users/wouldRewind";
-// возвращает объектов репозиториев с несколькими нужными свойствами
+// на API сгоняю один раз, потом хранить всё буду здесь
+let repos = [];
+const select = document.querySelector("select#language");
+const reposContainer = document.querySelector("main.github");
+// возвращает промис объектов репозиториев с несколькими нужными свойствами в resolve
 const getRepos = async userUrl => { 
 	// получение и обработка репозиториев
 	let repos = await fetch(`${userUrl}/repos`)
@@ -18,56 +24,39 @@ const getRepos = async userUrl => {
 		}
 	})
 }
-// возвращает тег select с опциями выбора языка программирования
-const languageSelect = repos => {
-	let optionNames = [...new Set(repos.map(({language}) => language))];
-	// исключаюю null из optionNames
-	optionNames = optionNames.filter(language => language);
-	// создаю select	
-	const select = document.createElement("select");
-	select.name = "language";
-	select.id = "language";
-	// составляю option'ы
-	const options =  optionNames.map(language => {
+// select будет на странице, пушатся будут только option'ы
 
-		const option = document.createElement("option");
-		option.value = language;
-		option.innerText = language;
-		
-		if(language == "JavaScript") // язык по умолчанию - JavaScript
-			option.setAttribute("selected",true)
-		return option;
-	})
-	// пушу их в селект
-	select.append(...options);
-	// возвращаю select
-	return select;
-};
-// вставляет select в заданный контейнер
-const insertSelect = (select,container) => {
-	container.appendChild(select);
-}
-// возвращает массив HTML-блоков - все репозитории для заданного языка language
-const repoList = (repos,language) => {
-
+const insertRepos = (container,repos,selectedLanguage) => {
+	// удаляю предыдущие значения
+	[...container.children].forEach(node => node.remove());
+	// вставляю новые
+	container.append(...GitHubRepos(selectedLanguage,repos));		
+	
 }
 
-function handleRepos(repos)
+
+// при загрузке страницы забираю данные репозиториев и загружаб select
+document.addEventListener("DOMContentLoaded",function()
 {
-	// вставляю select на страницу
-	const selectWrap = document.querySelector(".select-wrap");
-	const select = languageSelect(repos);
-	insertSelect(select,selectWrap);
-	
-	
-}
+	// по умолчанию подгружаются репозитории на JavaScript
+	getRepos(userUrl)
+	.then(data => {
+		repos = [...data];
+		// вставляю в select options
+		const langOptions = languageOptions(repos);
 
+		select.append(...langOptions);
+		// ищем в option с атрибутом selected
+		const lang = langOptions
+		.find(({selected}) => selected)
+		.value;
+		// пушу
+		insertRepos(reposContainer,repos,lang);
+	})
+})
 
-
-
-
-getRepos(userUrl)
-.then(handleRepos);
-
+select.addEventListener("change",event => {
+	insertRepos(reposContainer,repos,event.target.value)
+})
 
 
