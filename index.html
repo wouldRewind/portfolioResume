@@ -49,7 +49,6 @@
 		</div>
 	</section>
 
-	
 
 	<section class="section">
 		<div class="container">
@@ -58,7 +57,7 @@
 			</div>
 				<main class="main">
 					<img class="main__avatar wow slideInLeft" src="https://avatars3.githubusercontent.com/u/46257224?s=400&u=a65e18c78f59153896ab9ced760747ee9f076f0a&v=4" alt="Фото">
-					<p class="main__descr wow fadeInUp">Freshman student of <span class="main__education">MIREA Moscow University</span>, passionate about JavaScript, Web development and all related with that!</p>
+					<p class="main__descr wow fadeInDown">Freshman student of <span class="main__education">MIREA Moscow University</span>, passionate about JavaScript, Web development and all related with that!</p>
 				</main>
 			</div>
 	</section>
@@ -121,8 +120,8 @@
 			<div class="select-wrap">
 
 			</div>
-			<div class="select-wrap">
-				<select data-wow-delay="1s"  class="wow fadeInDown" name="language" id="language"></select>
+			<div class="select-wrap wow fadeInDown" data-wow-delay="1s">
+			<label for="language">Choose language</label> <div class="wrap"><select  name="language" id="language"></select></div>
 			</div>
 			<main class="github">
 			</main>
@@ -134,11 +133,12 @@
 			<div class="title-wrap">
 				<h2 class="title wow fadeInDown">Contact Me</h2>
 			</div>
-			<form action="" class="contact">
-				<input class="contact__mail" type="email" placeholder="Your email" autocomplete="">
-				<textarea class="contact__area"  placeholder="what do u want to tell me?" id=""  rows="1"></textarea>
+			<form action= "./src/php/mail.php" method="POST" class="contact" id="contact">
+				<input class="contact__mail" type="email" placeholder="Your email" name="userEmail" autocomplete="">
+				<textarea class="contact__area"  placeholder="what do u want to tell me?" id="" name="userMessage"  rows="1"></textarea>
 				<button type="submit">Send</button>
 			</form>
+			
 		</div>
 	</section>
 
