@@ -1,6 +1,6 @@
 # Добро пожаловать!
 ---
-####  [Посмотреть демоверсию сайта](http://webdesign.ru.net) **Примечание**: Сайт опубликован на GitHub Pages и не поддерживает SMTP-сервер!
+####  [Посмотреть демоверсию сайта](https://wouldrewind.github.io/portfolioResume/) ***Примечание***: Сайт опубликован на GitHub Pages и не поддерживает SMTP-сервер!
 ![Превью](https://sun9-54.userapi.com/a8HZMrwsZGjF8rTcLLrXER-Xou7rRg8RkhXJVw/ggAUO0nqhWQ.jpg)
 Это - моё резюме на позицию frontend-разработчика!
 ###  Какие технологии были использованы?
