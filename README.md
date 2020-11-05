@@ -1,5 +1,6 @@
 # Добро пожаловать!
 ---
+![Превью](https://sun9-54.userapi.com/a8HZMrwsZGjF8rTcLLrXER-Xou7rRg8RkhXJVw/ggAUO0nqhWQ.jpg)
 Это - моё резюме на позицию frontend-разработчика!
 ###  Какие технологии были использованы?
 1. **HTML**
