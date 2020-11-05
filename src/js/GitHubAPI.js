@@ -26,6 +26,7 @@ const getRepos = async userUrl => {
 }
 // select будет на странице, пушатся будут только option'ы
 
+
 const insertRepos = (container,repos,selectedLanguage) => {
 	// удаляю предыдущие значения
 	[...container.children].forEach(node => node.remove());
@@ -58,5 +59,4 @@ document.addEventListener("DOMContentLoaded",function()
 select.addEventListener("change",event => {
 	insertRepos(reposContainer,repos,event.target.value)
 })
-
 
