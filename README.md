@@ -17,10 +17,10 @@
 ```bash
 #Клонируйте репозиторий локально на своём компьютереЖ
 $ git clone https://github.com/wouldRewind/portfolioResume.git
-#Вы можете запустить локальный сервер:
-$ npm run dev
 #Чтобы собрать, используйте команду:
 $ npm run build
+#Вы можете запустить локальный сервер:
+$ npm run dev
 ```
 
 
