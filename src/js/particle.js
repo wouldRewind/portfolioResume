@@ -8,7 +8,7 @@ function particleDisplay()
 	reDrawParticles();
 	particleSizeAnim();
 	drawLines();
-	requestAnimationFrame(particleDisplay);
+	requestAnimationFrame(particleDisplay)
 }
 
 function particleInit()
