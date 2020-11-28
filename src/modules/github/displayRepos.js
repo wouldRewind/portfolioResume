@@ -37,12 +37,19 @@ const GitHubRepos = (selectedLanguage,repos) => {
 		const desc = document.createElement("p");
 		desc.classList.add("github-repo__desc");
 		// если опсинание на кириллице, меняею шрифт
-		const regexp = /[а-яё]/i;
+		const regexp = /[а-яё]/ig;
+
 		if(regexp.test(description) == true)
-		{
 			desc.classList.add("cyrillic");
-		}
-		desc.innerText = description;
+		
+		const maxLen = 40; // максимальная длинна описания репозитория
+		const breadCrumbs = "..." // если описание большое, обрезаю
+
+		// если description пустой(null), возвращается первый операнд(false эквивалентен пустой строке), если же строка - возвращает второй операнд: огр.строку + крошки
+		desc.innerText = 
+		typeof description == null ? description
+		: typeof description == "string" && description.length < maxLen ? description  
+		: typeof description == "string" &&  description.slice(0,maxLen).concat(breadCrumbs)  
 
 		const progLanguage = document.createElement("p");
 		progLanguage.classList.add("github-repo__language");
