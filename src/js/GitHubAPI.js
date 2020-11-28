@@ -1,5 +1,5 @@
-import {languageOptions} from "../modules/github/displayRepos.js";
- import {userUrl,reposContainer,select,getRepos,insertRepos} from "./ProccessAPI.js";
+import {languageOptions} from "../modules/github/displayRepos";
+ import {userUrl,reposContainer,select,getRepos,insertRepos} from "./ProccessAPI";
 // на API сгоняю один раз, потом хранить всё буду здесь
 let repos = [];
 // возвращает промис объектов репозиториев с несколькими нужными свойствами в resolve

@@ -3,7 +3,7 @@ const path = require("path")
 module.exports = {
 	mode: "production",
 	entry: {
-		main: "./index.js"
+		main: "./index.ts"
 	},
 	output: {
 		path: path.resolve(__dirname,"dist"),
@@ -25,7 +25,15 @@ module.exports = {
 					presets: ["@babel/preset-env"]
 				}
 				}
+			},
+			{
+				test: /\.tsx?$/,
+				use: "ts-loader",
+				exclude: /node_modules/,
 			}
 		]
+	},
+	resolve: {
+		extensions: [".tsx",".ts",".js"]
 	}
 }

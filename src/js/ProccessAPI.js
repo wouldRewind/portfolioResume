@@ -12,7 +12,7 @@ export const getRepos = async userUrl => {
 	repos = await repos.json();
 	// возвращаю нужные свойства
 	return repos
-	.map(function ({name,description,language,url})
+	.map(function ({name,description,language,url}) 
 	{
 		return {
 			name,
