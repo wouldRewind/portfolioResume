@@ -12,7 +12,6 @@ document.getElementById("myName").addEventListener("animationend",function(){
 	 startDelay: 1000, // длительность паузы перед началом 
 	 backDelay: 1000,
     loop: false, // цикличное повторение
-    loopCount: false, // количество итерации, false - бесконечно
 	});
 })
 
