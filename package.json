@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tsc:w": "tsc-w"
+    "tsc:w": "tsc-w",
+    "dev": "webpack serve",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -17,9 +19,12 @@
     "url": "https://github.com/wouldRewind/portfolioResume/issues"
   },
   "homepage": "https://github.com/wouldRewind/portfolioResume#readme",
-  "dependencies": {},
+  "dependencies": {
+    "webpack-dev-server": "^3.11.0"
+  },
   "devDependencies": {
     "typescript": "^4.0.5",
-    "webpack": "^5.8.0"
+    "webpack": "^5.8.0",
+    "webpack-cli": "^4.2.0"
   }
 }
