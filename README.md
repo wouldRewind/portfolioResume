@@ -13,7 +13,7 @@
 6. ***Библиотека wow.js для анимации***
 7. ***GitHub API***(подгружаю мои репозитории с GitHub)
 
-#Использование
+# Использование
 ```bash
 #Клонируйте репозиторий локально на своём компьютереЖ
 $ git clone https://github.com/wouldRewind/portfolioResume.git
