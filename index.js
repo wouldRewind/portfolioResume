@@ -1,3 +1,4 @@
+import "@babel/polyfill";
 import {particleInit} from "./src/js/particle.js";
 import {listenGithub} from "./src/js/GitHubAPI.js";
 
