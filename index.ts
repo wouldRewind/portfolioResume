@@ -16,17 +16,17 @@ document.addEventListener("DOMContentLoaded",function()
 	handleMenu()
 })
 
-$(function(){
-	$("a[href^='#']").click(function(){
-		const blockID : string = $(this).attr("href"); 
-		console.log(blockID);
+// $(function(){
+// 	$("a[href^='#']").click(function(){
+// 		const blockID : string = $(this).attr("href").slice(1); 
+// 		console.log(blockID);
 		
-		// document.querySelector(blockID).scrollIntoView({
-		// 	behavior:"smooth",
-		// 	block: "start"
-		// })
-	});
-});
+// 		document.getElementById(blockID).scrollIntoView({
+// 			behavior:"auto",
+// 			block: "start"
+// 		})
+// 	});
+// });
 
 
 
