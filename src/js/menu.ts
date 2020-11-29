@@ -8,14 +8,49 @@ const sections : Array<HTMLElement> = Array.from(document.querySelectorAll("sect
 
 const burger: HTMLDivElement = document.querySelector(".burger");
 
+const up: HTMLElement = document.getElementById("up");
+
+const getAnchors  = () : Array<HTMLAnchorElement> => Array // получает все ссылки, начинающися на #
+.from(document.querySelectorAll("a[href^='#']")) 
+const getScrollBlocks = () : Array<HTMLAnchorElement> => Array
+.from(document.querySelectorAll("a[scroll]"))
+
+
+
+
+const handleAnchorClick = () : void => {
+    getAnchors()
+    .forEach((link) : void =>  {
+        link.addEventListener("click",e => {
+            e.preventDefault();
+
+            const linkID : string = link.getAttribute("href").slice(1); // избавляюсь от #
+
+            const bookmark : HTMLAnchorElement = getScrollBlocks()
+            .find((bm) : boolean => bm.getAttribute("scroll") == linkID) // получаю "закладку", до куда крутить
+
+            // кручу-верчу
+            bookmark.scrollIntoView({
+                behavior:"smooth",
+                block:"start"
+            })
+            
+            // скрываю меню
+            menu.classList.add("hidden-menu")
+            
+        })
+    })
+    
+}
+
 export function insertMenu() : void {
     sections.forEach(section => {
 
-        const titleName: string = section.querySelector(".title").textContent;
+        const titleName: string = section.querySelector(".title").textContent; // название секции
 
         const bookmark: HTMLAnchorElement = document.createElement("a")
         bookmark.classList.add("bookmark")
-        bookmark.setAttribute("id",titleName)
+        bookmark.setAttribute("scroll",titleName)
 
         const item : HTMLLIElement = document.createElement("li");
         const link : HTMLAnchorElement = document.createElement("a");
@@ -29,11 +64,26 @@ export function insertMenu() : void {
     })
 };
 
+up.addEventListener("click",() => {
+    document.querySelector(".no-pad").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    })
+})
+
 export function handleMenu () : void
 {
-    
+    handleAnchorClick();
     document.addEventListener("scroll",function handler(e)
     {
+        const scrY : number = window.scrollY;
+        
+        if(scrY > 1400)
+            up.classList.remove("invisible")
+        else
+            up.classList.add("invisible")
+        
+
         if(getComputedStyle(burger).display =="none")
         {
             if(window.scrollY > 0)
@@ -48,7 +98,6 @@ export function handleMenu () : void
 
         
     })
-
 
     burger.addEventListener("click",function()
     {

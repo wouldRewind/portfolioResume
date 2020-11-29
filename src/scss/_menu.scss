@@ -1,4 +1,20 @@
 @import "./var";
+.invisible{
+    display: none;
+}
+#up{
+    transition: $transitionDuration;
+    position: fixed;
+    bottom: 5%;
+    left: 5%;
+    z-index: 125;
+    font-size: 7rem;
+    cursor: pointer;
+    color: lighten($decorColor,40);
+    &:hover{
+        color: $decorColor;
+    }
+}
 .burger{
     display: none;
     cursor: pointer;
@@ -38,10 +54,6 @@
     justify-content: space-around;
 
     & > li{
-        &:not(:last-child)
-        {
-          
-        }
         & > a {
             padding: $mainOffset ;
             display: block;
@@ -76,5 +88,8 @@
     }
     .burger{
         display: block;
+    }
+    #up{
+        font-size: 5rem;
     }
 }
