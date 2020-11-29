@@ -14,8 +14,14 @@ body{
 	border: none;
 	outline: none;
 }
+.bookmark{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
 section{
 	padding: 6.25rem 0;
+	position: relative;
 	&.no-pad{
 		padding: 0;
 		height: 100vh;
