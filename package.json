@@ -23,6 +23,7 @@
     "@babel/polyfill": "^7.12.1",
     "@babel/runtime": "^7.12.5",
     "@types/jquery": "^3.5.4",
+    "filterizr": "^2.2.4",
     "jquery": "^3.5.1",
     "webpack-dev-server": "^3.11.0",
     "wow.js": "^1.1.3"

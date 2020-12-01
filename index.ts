@@ -1,3 +1,4 @@
+import Filterizr from 'filterizr';
 
 import "@babel/polyfill";
 import {particleInit} from "./src/js/particle";
@@ -15,8 +16,11 @@ document.addEventListener("DOMContentLoaded",function()
 	listenGithub()
 	insertMenu()
 	handleMenu()
+	const filterizr : object =  new Filterizr(".filter-container")
 })
-
+// // document.addEventListener("load",function(){
+// 	const filterizr : object =  new Filterizr(".gallery-container")
+// })
 
 
 
