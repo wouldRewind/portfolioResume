@@ -1,0 +1,37 @@
+@import "./var";
+.select-repo{
+    transition: all ease-in-out $transitionDuration;
+    max-width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    margin-bottom: $mainOffset;
+    & > li{
+        &:hover{
+            color: $decorColor;
+            background: white;
+        }
+        &[selected]{
+            background: $decorColor;
+            color: gold;
+        }
+        background: transparent;
+        padding: $mainOffset / 2 $mainOffset;
+        text-align: center;
+        cursor: pointer;
+        transition: inherit;
+    }
+}
+@media screen and(max-width: $tablet_break_point){
+    .select-repo{
+        max-width: 70%;
+        
+    }
+}
+
+@media screen and(max-width: $mobile_break_point){
+    .select-repo{
+        flex-flow: column wrap;
+    }
+}
