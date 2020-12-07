@@ -1,12 +1,11 @@
-const languageOptions = repos => {
+const languageOptions = (repos,optionElement = "option") => { // optionElement - может быть так же и li элементом
 	let optionNames = [...new Set(repos
 		.map(({language}) => language))];
 	// исключаюю null из optionNames
 	optionNames = optionNames.filter(language => language);
 	// вовзаращаю option'ы
 	return optionNames.map(language => {
-
-		const option = document.createElement("option");
+		const option = document.createElement(optionElement);
 		option.value = language;
 		option.innerText = language;
 		
@@ -47,7 +46,7 @@ const GitHubRepos = (selectedLanguage,repos) => {
 
 		// если description пустой(null), возвращается первый операнд(false эквивалентен пустой строке), если же строка - возвращает второй операнд: огр.строку + крошки
 		desc.innerText = 
-		typeof description == null ? description
+		typeof description == "object" ? "Without description"
 		: typeof description == "string" && description.length < maxLen ? description  
 		: typeof description == "string" &&  description.slice(0,maxLen).concat(breadCrumbs)  
 
