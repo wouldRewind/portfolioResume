@@ -4,28 +4,28 @@ const languageOptions = (repos,optionElement = "option") => { // optionElement -
 	// исключаюю null из optionNames
 	optionNames = optionNames.filter(language => language);
 	// вовзаращаю option'ы
-	return optionNames.map(language => {
+	return optionNames.map((language,idx) => {
 		const option = document.createElement(optionElement);
-		option.value = language;
+		option.setAttribute("value",language);
 		option.innerText = language;
 		
 		if(language == "JavaScript") // язык по умолчанию - JavaScript
 			option.setAttribute("selected",true)
+		option.setAttribute("data-wow-delay",`${idx * 0.5}s`)
+		option.classList.add("wow","fadeInDown")
 		return option;
 	})
-	// пушу их в селект
-	select.append(...options);
-	// возвращаю select
 };
 
 const GitHubRepos = (selectedLanguage,repos) => {
-	// нахожу подходящие репы
-	const accordingRepos = repos.filter(({language}) => language == selectedLanguage);
-	return accordingRepos
+
+	const accordingRepos = repos.filter(({language}) => language == selectedLanguage); // оставляю репозитории, соответсвующие выбранному языку
+
+	return accordingRepos // мэпаю репозитории в HTML отображение 
 	.map(({language,url,name,description}) => {
 
 		const repo = document.createElement("figure");
-		repo.classList.add("github-repo","wow","fadeInDown");
+		repo.classList.add("github-repo","wow","fadeInDown"); // вешаю анимацию на блок с репозиторием
 		
 		const link = document.createElement("a");
 		link.href = url;
@@ -35,7 +35,7 @@ const GitHubRepos = (selectedLanguage,repos) => {
 
 		const desc = document.createElement("p");
 		desc.classList.add("github-repo__desc");
-		// если опсинание на кириллице, меняею шрифт
+		// если опсинание на кириллице, меняю шрифт
 		const regexp = /[а-яё]/ig;
 
 		if(regexp.test(description) == true)
@@ -46,9 +46,9 @@ const GitHubRepos = (selectedLanguage,repos) => {
 
 		// если description пустой(null), возвращается первый операнд(false эквивалентен пустой строке), если же строка - возвращает второй операнд: огр.строку + крошки
 		desc.innerText = 
-		typeof description == "object" ? "Without description"
+		typeof description == "object" ? "Without description" // если описания нет, приходит null, а typeof null == object, спасибо Эйх
 		: typeof description == "string" && description.length < maxLen ? description  
-		: typeof description == "string" &&  description.slice(0,maxLen).concat(breadCrumbs)  
+		: description.slice(0,maxLen).concat(breadCrumbs)  
 
 		const progLanguage = document.createElement("p");
 		progLanguage.classList.add("github-repo__language");

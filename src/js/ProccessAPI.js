@@ -24,5 +24,5 @@ export const getRepos = async userUrl => {
 		}
 	})
 }
-export const select = document.querySelector("select#language");
+export const select = document.querySelector(".select-repo");
 export const reposContainer = document.querySelector("main.github");
