@@ -23,6 +23,7 @@ section{
 	padding: 6.25rem 0;
 	position: relative;
 	&.no-pad{
+		position: relative;
 		padding: 0;
 		height: 100vh;
 	}

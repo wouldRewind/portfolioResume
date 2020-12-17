@@ -7,7 +7,9 @@ import {insertMenu,handleMenu} from "./src/js/menu";
 // перед тем, как загрузятся стили
 document.addEventListener("DOMContentLoaded",function()
 {
-	particleInit()
+	console.log(1);
+	
+	// particleInit()
 	listenGithub()
 	insertMenu()
 	handleMenu()
