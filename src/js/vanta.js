@@ -15,7 +15,4 @@
   sunlightColor: 0xf5983c,
   speed: 2.2
 })
-document.querySelector(".no-pad")
-.addEventListener("mousemove",function(){
 
-})
