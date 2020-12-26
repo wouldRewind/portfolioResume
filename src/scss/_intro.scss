@@ -79,6 +79,9 @@
 		&-img{
 			margin-top: $mainOffset * 2;
 			margin-left: 0;
+			&__holder {
+				width: 90%;
+			}
 		}
 	}
 }
