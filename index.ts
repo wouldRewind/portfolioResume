@@ -9,11 +9,11 @@ import {hangAnimation} from "./src/js/anim";
 document.addEventListener("DOMContentLoaded",function()
 {
 	
-	// particleInit()
-	listenGithub()
+	particleInit() // анимированный фон
+	listenGithub() // подгрузка репозиториев
 	insertMenu()
 	handleMenu()
-	hangAnimation();
+	hangAnimation(); // анимация на блоки
 })
 
 
