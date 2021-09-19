@@ -43,7 +43,7 @@ const downloadOnce = () => { // один раз загружаю, потом и�
 }
 
 export const listenGithub = () => {
-	downloadOnce()
+	downloadOnce();
 }
 
 

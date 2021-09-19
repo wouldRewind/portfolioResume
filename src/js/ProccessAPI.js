@@ -5,6 +5,7 @@ export const insertRepos = (container,repos,selectedLanguage) => {
 	// вставляю новые
 	container.append(...GitHubRepos(selectedLanguage,repos));		
 }
+
 export const userUrl = "https://api.github.com/users/wouldRewind";
 export const getRepos = async userUrl => { 
 	// получение и обработка репозиториев
